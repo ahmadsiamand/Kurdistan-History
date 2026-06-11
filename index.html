@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شوێنەوارە مێژووییەکانی کوردستان</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">مێژووی کوردستان</div>
+        <ul class="nav-links">
+            <li><a href="index.html">سەرەتا</a></li>
+            <li><a href="places.html">شوێنەوارەکان</a></li>
+            <li><button id="theme-toggle" class="btn-theme">گۆڕینی ڕەنگ</button></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>گەشتێک بەناو مێژووی دێرینی کوردستاندا</h1>
+            <p>گەڕان بکە بەناو قەڵا، ئەشکەوت و شوێنەوارە هەزار ساڵەییەکان.</p>
+            <div class="search-bar">
+                <input type="text" id="home-search" placeholder="گەڕان بۆ شوێنەوار...">
+                <button onclick="window.location.href='places.html'" class="btn-primary">گەڕان</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="featured-places">
+        <h2>شوێنەوارە دیارەکان</h2>
+        <div class="grid-container" id="featured-grid">
+            </div>
+    </section>
+
+    <section class="statistics">
+        <div class="stat-box">
+            <h3>+١٠,٠٠٠</h3>
+            <p>ساڵ لە مێژوو</p>
+        </div>
+        <div class="stat-box">
+            <h3>+٥٠</h3>
+            <p>شوێنەواری تۆمارکراو</p>
+        </div>
+        <div class="stat-box">
+            <h3>٤</h3>
+            <p>پارێزگای سەرەکی</p>
+        </div>
+    </section>
+
+    <section class="quiz-section">
+        <h2>تاقیکردنەوەی مێژوویی</h2>
+        <div class="quiz-container" id="quiz-container">
+            <p id="question">پایتەختی میرنشینی بابان کوێ بووە؟</p>
+            <div class="options">
+                <button class="btn-outline" onclick="checkAnswer(false)">هەولێر</button>
+                <button class="btn-outline" onclick="checkAnswer(true)">سلێمانی</button>
+                <button class="btn-outline" onclick="checkAnswer(false)">دهۆک</button>
+            </div>
+            <p id="quiz-result"></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; ٢٠٢٦ شوێنەوارە مێژووییەکانی کوردستان. گشت مافەکانی پارێزراوە.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
