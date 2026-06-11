@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لیستی شوێنەوارەکان</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">مێژووی کوردستان</div>
+        <ul class="nav-links">
+            <li><a href="index.html">سەرەتا</a></li>
+            <li><a href="places.html">شوێنەوارەکان</a></li>
+            <li><button id="theme-toggle" class="btn-theme">گۆڕینی ڕەنگ</button></li>
+        </ul>
+    </nav>
+
+    <section class="places-header">
+        <h1>گشت شوێنەوارەکان</h1>
+        <div class="filters">
+            <input type="text" id="search-input" placeholder="گەڕان بەدوای ناو یان شار...">
+            <select id="city-filter">
+                <option value="all">هەموو شارەکان</option>
+                <option value="هەولێر">هەولێر</option>
+                <option value="سلێمانی">سلێمانی</option>
+                <option value="دهۆک">دهۆک</option>
+                <option value="هەڵەبجە">هەڵەبجە</option>
+            </select>
+        </div>
+    </section>
+
+    <section class="places-list">
+        <div class="grid-container" id="places-grid">
+            </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; ٢٠٢٦ شوێنەوارە مێژووییەکانی کوردستان.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
