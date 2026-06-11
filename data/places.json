@@ -1,0 +1,22 @@
+[
+  { "id": 1, "name": "قەڵای هەولێر", "city": "هەولێر", "description": "یەکێکە لە کۆنترین شوێنەکانی جیهان کە تا ئێستا ژیانی تێدا بەردەوامە.", "image": "images/erbil-citadel.jpg", "rating": 4.9 },
+  { "id": 2, "name": "ئەشکەوتی شانەدەر", "city": "هەولێر", "description": "ئەشکەوتێکی مێژووییە کە پاشماوەی مرۆڤی نیاندەرتاڵی تێدا دۆزراوەتەوە.", "image": "images/shanidar.jpg", "rating": 4.8 },
+  { "id": 3, "name": "پردی دەلال", "city": "زاخۆ", "description": "پردێکی مێژووییە لەسەر ڕووباری خابوور لە شاری زاخۆ دروستکراوە.", "image": "images/dalal-bridge.jpg", "rating": 4.7 },
+  { "id": 4, "name": "قەڵای شێروانە", "city": "کەلار", "description": "قەڵایەکی کۆنە لەلایەن محەمەد پاشای جافەوە دروستکراوە.", "image": "images/sherwana.jpg", "rating": 4.6 },
+  { "id": 5, "name": "ئەمنە سوورەکە", "city": "سلێمانی", "description": "مۆزەخانەیەکی نیشتمانییە کە پێشتر زیندان و بنکەی ئەشکەنجەدان بووە.", "image": "images/amna-suraka.jpg", "rating": 4.9 },
+  { "id": 6, "name": "مۆنۆمێنتی هەڵەبجە", "city": "هەڵەبجە", "description": "یادگارییەکە بۆ قوربانیانی کیمیابارانی هەڵەبجە.", "image": "images/halabja.jpg", "rating": 5.0 },
+  { "id": 7, "name": "قەڵای ئامێدی", "city": "دهۆک", "description": "شارۆچکەیەکی دێرینە کە لەسەر لوتکەی چیایەک دروستکراوە.", "image": "images/amedi.jpg", "rating": 4.8 },
+  { "id": 8, "name": "منارەی چۆلی", "city": "هەولێر", "description": "منارەیەکی مێژووییە دەگەڕێتەوە بۆ سەردەمی سوڵتان موزەفەرەدین.", "image": "images/choli.jpg", "rating": 4.5 },
+  { "id": 9, "name": "قەڵای خانزاد", "city": "هەولێر", "description": "قەڵایەکی سەردەمی میرنشینی سۆرانە لەسەر ڕێگای شەقڵاوە.", "image": "images/khanzad.jpg", "rating": 4.4 },
+  { "id": 10, "name": "ئەشکەوتی هەزارمێرد", "city": "سلێمانی", "description": "یەکێکە لە ئەشکەوتە کۆنەکانی کوردستان کە پاشماوەی سەردەمی بەردینی تێدایە.", "image": "images/hazarmerd.jpg", "rating": 4.3 },
+  { "id": 11, "name": "چەمی ڕێزان", "city": "سلێمانی", "description": "ناوچەیەکی گەشتیاری و مێژووییە لە پارێزگای سلێمانی.", "image": "images/chami-rezan.jpg", "rating": 4.6 },
+  { "id": 12, "name": "پەرستگای لالەش", "city": "شێخان", "description": "پیرۆزترین پەرستگای ئایینی ئێزیدییەکانە لە جیهاندا.", "image": "images/lalesh.jpg", "rating": 4.9 },
+  { "id": 13, "name": "خەنەس", "city": "دهۆک", "description": "ناوچەیەکی مێژووییە کە هەڵکۆردراوی سەردەمی ئاشوورییەکانی تێدایە.", "image": "images/khinis.jpg", "rating": 4.7 },
+  { "id": 14, "name": "قشڵەی کۆیە", "city": "کۆیە", "description": "قەڵایەکی سەردەمی عوسمانییەکانە لە ناوەندی شاری کۆیە.", "image": "images/koya-qishlaq.jpg", "rating": 4.5 },
+  { "id": 15, "name": "قەڵای ئاکرێ", "city": "ئاکرێ", "description": "قەڵایەکی دێرینە کە بەسەر شاخەکانی ئاکرێوە دیارە.", "image": "images/akre.jpg", "rating": 4.8 },
+  { "id": 16, "name": "چارستین", "city": "دهۆک", "description": "پەرستگایەکی کۆنی ئایینی زەردەشتییەکانە.", "image": "images/charsteen.jpg", "rating": 4.4 },
+  { "id": 17, "name": "قەڵای ڕواندز", "city": "ڕواندز", "description": "قەڵای پایتەختی میرنشینی سۆران بووە لە سەردەمی پاشای گەورە.", "image": "images/rawanduz.jpg", "rating": 4.7 },
+  { "id": 18, "name": "نەخشی چیای هەریر", "city": "هەولێر", "description": "نەخشێکی هەڵکۆردراوی سەر شاخە دەگەڕێتەوە بۆ سەردەمی ئورارتووەکان.", "image": "images/harir.jpg", "rating": 4.3 },
+  { "id": 19, "name": "گۆڕستانی مەلیک مەحمود", "city": "سلێمانی", "description": "گۆڕستانی گردی سەیوان کە پاشای کوردستان و چەندین کەسایەتی تێدا نێژراوە.", "image": "images/saywan.jpg", "rating": 4.6 },
+  { "id": 20, "name": "پردی قەندیل", "city": "پشدەر", "description": "یەکێک لە ناوچە ستراتیژی و سروشتییە مێژووییەکانی ناوچەکە.", "image": "images/qandil.jpg", "rating": 4.5 }
+]
