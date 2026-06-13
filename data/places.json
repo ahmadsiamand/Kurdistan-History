@@ -1,22 +1,281 @@
 [
-  { "id": 1, "name": "قەڵای هەولێر", "city": "هەولێر", "description": "یەکێکە لە کۆنترین شوێنەکانی جیهان کە تا ئێستا ژیانی تێدا بەردەوامە.", "image": "images/erbil-citadel.jpg", "rating": 4.9 },
-  { "id": 2, "name": "ئەشکەوتی شانەدەر", "city": "هەولێر", "description": "ئەشکەوتێکی مێژووییە کە پاشماوەی مرۆڤی نیاندەرتاڵی تێدا دۆزراوەتەوە.", "image": "images/shanidar.jpg", "rating": 4.8 },
-  { "id": 3, "name": "پردی دەلال", "city": "زاخۆ", "description": "پردێکی مێژووییە لەسەر ڕووباری خابوور لە شاری زاخۆ دروستکراوە.", "image": "images/dalal-bridge.jpg", "rating": 4.7 },
-  { "id": 4, "name": "قەڵای شێروانە", "city": "کەلار", "description": "قەڵایەکی کۆنە لەلایەن محەمەد پاشای جافەوە دروستکراوە.", "image": "images/sherwana.jpg", "rating": 4.6 },
-  { "id": 5, "name": "ئەمنە سوورەکە", "city": "سلێمانی", "description": "مۆزەخانەیەکی نیشتمانییە کە پێشتر زیندان و بنکەی ئەشکەنجەدان بووە.", "image": "images/amna-suraka.jpg", "rating": 4.9 },
-  { "id": 6, "name": "مۆنۆمێنتی هەڵەبجە", "city": "هەڵەبجە", "description": "یادگارییەکە بۆ قوربانیانی کیمیابارانی هەڵەبجە.", "image": "images/halabja.jpg", "rating": 5.0 },
-  { "id": 7, "name": "قەڵای ئامێدی", "city": "دهۆک", "description": "شارۆچکەیەکی دێرینە کە لەسەر لوتکەی چیایەک دروستکراوە.", "image": "images/amedi.jpg", "rating": 4.8 },
-  { "id": 8, "name": "منارەی چۆلی", "city": "هەولێر", "description": "منارەیەکی مێژووییە دەگەڕێتەوە بۆ سەردەمی سوڵتان موزەفەرەدین.", "image": "images/choli.jpg", "rating": 4.5 },
-  { "id": 9, "name": "قەڵای خانزاد", "city": "هەولێر", "description": "قەڵایەکی سەردەمی میرنشینی سۆرانە لەسەر ڕێگای شەقڵاوە.", "image": "images/khanzad.jpg", "rating": 4.4 },
-  { "id": 10, "name": "ئەشکەوتی هەزارمێرد", "city": "سلێمانی", "description": "یەکێکە لە ئەشکەوتە کۆنەکانی کوردستان کە پاشماوەی سەردەمی بەردینی تێدایە.", "image": "images/hazarmerd.jpg", "rating": 4.3 },
-  { "id": 11, "name": "چەمی ڕێزان", "city": "سلێمانی", "description": "ناوچەیەکی گەشتیاری و مێژووییە لە پارێزگای سلێمانی.", "image": "images/chami-rezan.jpg", "rating": 4.6 },
-  { "id": 12, "name": "پەرستگای لالەش", "city": "شێخان", "description": "پیرۆزترین پەرستگای ئایینی ئێزیدییەکانە لە جیهاندا.", "image": "images/lalesh.jpg", "rating": 4.9 },
-  { "id": 13, "name": "خەنەس", "city": "دهۆک", "description": "ناوچەیەکی مێژووییە کە هەڵکۆردراوی سەردەمی ئاشوورییەکانی تێدایە.", "image": "images/khinis.jpg", "rating": 4.7 },
-  { "id": 14, "name": "قشڵەی کۆیە", "city": "کۆیە", "description": "قەڵایەکی سەردەمی عوسمانییەکانە لە ناوەندی شاری کۆیە.", "image": "images/koya-qishlaq.jpg", "rating": 4.5 },
-  { "id": 15, "name": "قەڵای ئاکرێ", "city": "ئاکرێ", "description": "قەڵایەکی دێرینە کە بەسەر شاخەکانی ئاکرێوە دیارە.", "image": "images/akre.jpg", "rating": 4.8 },
-  { "id": 16, "name": "چارستین", "city": "دهۆک", "description": "پەرستگایەکی کۆنی ئایینی زەردەشتییەکانە.", "image": "images/charsteen.jpg", "rating": 4.4 },
-  { "id": 17, "name": "قەڵای ڕواندز", "city": "ڕواندز", "description": "قەڵای پایتەختی میرنشینی سۆران بووە لە سەردەمی پاشای گەورە.", "image": "images/rawanduz.jpg", "rating": 4.7 },
-  { "id": 18, "name": "نەخشی چیای هەریر", "city": "هەولێر", "description": "نەخشێکی هەڵکۆردراوی سەر شاخە دەگەڕێتەوە بۆ سەردەمی ئورارتووەکان.", "image": "images/harir.jpg", "rating": 4.3 },
-  { "id": 19, "name": "گۆڕستانی مەلیک مەحمود", "city": "سلێمانی", "description": "گۆڕستانی گردی سەیوان کە پاشای کوردستان و چەندین کەسایەتی تێدا نێژراوە.", "image": "images/saywan.jpg", "rating": 4.6 },
-  { "id": 20, "name": "پردی قەندیل", "city": "پشدەر", "description": "یەکێک لە ناوچە ستراتیژی و سروشتییە مێژووییەکانی ناوچەکە.", "image": "images/qandil.jpg", "rating": 4.5 }
+  {
+    "id": 1,
+    "name_en": "Erbil Citadel",
+    "name_ku": "قەڵای هەولێر",
+    "name_ar": "قلعة أربيل",
+    "city": "Erbil",
+    "type": "Citadel",
+    "year": "6000+ Years",
+    "rating": 4.9,
+    "image": "images/erbil-citadel.jpg",
+    "gallery": [
+      "images/erbil1.jpg",
+      "images/erbil2.jpg",
+      "images/erbil3.jpg"
+    ],
+    "coordinates": {
+      "lat": 36.1911,
+      "lng": 44.0092
+    },
+    "description_en": "One of the oldest continuously inhabited settlements in the world.",
+    "description_ku": "یەکێکە لە کۆنترین شوێنە نیشتەجێبووە بەردەوامەکانی جیهان.",
+    "description_ar": "واحدة من أقدم المستوطنات المأهولة باستمرار في العالم."
+  },
+
+  {
+    "id": 2,
+    "name_en": "Lalish Temple",
+    "name_ku": "لەلەش",
+    "name_ar": "معبد لالش",
+    "city": "Duhok",
+    "type": "Temple",
+    "year": "Ancient",
+    "rating": 4.8,
+    "image": "images/lalish.jpg",
+    "coordinates": {
+      "lat": 36.7624,
+      "lng": 43.8934
+    },
+    "description_en": "The holiest site of the Yazidi religion.",
+    "description_ku": "پیرۆزترین شوێنی ئاینی ئێزیدی.",
+    "description_ar": "أقدس موقع ديني للإيزيديين."
+  },
+
+  {
+    "id": 3,
+    "name_en": "Amedi",
+    "name_ku": "ئامێدی",
+    "name_ar": "العمادية",
+    "city": "Duhok",
+    "type": "Ancient Town",
+    "year": "3000+ Years",
+    "rating": 4.7,
+    "image": "images/amedi.jpg",
+    "coordinates": {
+      "lat": 37.0927,
+      "lng": 43.4886
+    },
+    "description_en": "Historic town built on a mountain plateau.",
+    "description_ku": "شارێکی مێژوویی لەسەر لوتکەی شاخ دروستکراوە.",
+    "description_ar": "مدينة تاريخية بنيت فوق هضبة جبلية."
+  },
+
+  {
+    "id": 4,
+    "name_en": "Kirkuk Citadel",
+    "name_ku": "قەڵای کەرکووک",
+    "name_ar": "قلعة كركوك",
+    "city": "Kirkuk",
+    "type": "Citadel",
+    "year": "2500+ Years",
+    "rating": 4.6,
+    "image": "images/kirkuk.jpg",
+    "coordinates": {
+      "lat": 35.4681,
+      "lng": 44.3922
+    },
+    "description_en": "Ancient fortress overlooking Kirkuk.",
+    "description_ku": "قەڵایەکی کۆن کە سەرپەرشتی کەرکووک دەکات.",
+    "description_ar": "حصن قديم يطل على مدينة كركوك."
+  },
+
+  {
+    "id": 5,
+    "name_en": "Qizqapan Cave",
+    "name_ku": "ئەشکەوتی قزقەپان",
+    "name_ar": "كهف قزقابان",
+    "city": "Sulaymaniyah",
+    "type": "Rock Tomb",
+    "year": "Median Era",
+    "rating": 4.5,
+    "image": "images/qizqapan.jpg",
+    "coordinates": {
+      "lat": 35.132,
+      "lng": 45.112
+    },
+    "description_en": "Ancient rock-cut tomb from the Median period.",
+    "description_ku": "گۆڕستانێکی کۆنی تاشدراو لە سەردەمی ماد.",
+    "description_ar": "مقبرة صخرية قديمة تعود للعصر الميدي."
+  },
+
+  {
+    "id": 6,
+    "name_en": "Ahmed Awa Cave",
+    "name_ku": "ئەشکەوتی ئەحمەد ئاوا",
+    "name_ar": "كهف أحمد آوا",
+    "city": "Halabja",
+    "type": "Cave",
+    "year": "Ancient",
+    "rating": 4.4,
+    "image": "images/ahmedawa.jpg"
+  },
+
+  {
+    "id": 7,
+    "name_en": "Shanidar Cave",
+    "name_ku": "ئەشکەوتی شانەدەر",
+    "name_ar": "كهف شانيدر",
+    "city": "Erbil",
+    "type": "Archaeological Cave",
+    "year": "60,000 Years",
+    "rating": 4.9,
+    "image": "images/shanidar.jpg"
+  },
+
+  {
+    "id": 8,
+    "name_en": "Rabana Fortress",
+    "name_ku": "قەڵای ڕەبانە",
+    "name_ar": "حصن ربانة",
+    "city": "Sulaymaniyah",
+    "type": "Fortress",
+    "year": "Parthian Era",
+    "rating": 4.5,
+    "image": "images/rabana.jpg"
+  },
+
+  {
+    "id": 9,
+    "name_en": "Khanzad Castle",
+    "name_ku": "قەڵای خانزاد",
+    "name_ar": "قلعة خانزاد",
+    "city": "Erbil",
+    "type": "Castle",
+    "year": "17th Century",
+    "rating": 4.3,
+    "image": "images/khanzad.jpg"
+  },
+
+  {
+    "id": 10,
+    "name_en": "Bekhal Bridge",
+    "name_ku": "پردی بێخاڵ",
+    "name_ar": "جسر بيخال",
+    "city": "Erbil",
+    "type": "Historic Bridge",
+    "year": "Ottoman Era",
+    "rating": 4.2,
+    "image": "images/bekhal.jpg"
+  },
+
+  {
+    "id": 11,
+    "name_en": "Bazian Pass",
+    "name_ku": "تەنگی بازیان",
+    "name_ar": "ممر بازيان",
+    "city": "Sulaymaniyah",
+    "type": "Historic Route",
+    "year": "Ancient",
+    "rating": 4.3,
+    "image": "images/bazian.jpg"
+  },
+
+  {
+    "id": 12,
+    "name_en": "Dokan Heritage Area",
+    "name_ku": "ناوچەی مێژوویی دووکان",
+    "name_ar": "منطقة دوكان التراثية",
+    "city": "Sulaymaniyah",
+    "type": "Heritage Site",
+    "year": "Ancient",
+    "rating": 4.4,
+    "image": "images/dokan.jpg"
+  },
+
+  {
+    "id": 13,
+    "name_en": "Akre Old Town",
+    "name_ku": "شاری کۆنی ئاکرێ",
+    "name_ar": "مدينة عقرة القديمة",
+    "city": "Duhok",
+    "type": "Historic Town",
+    "year": "1000+ Years",
+    "rating": 4.7,
+    "image": "images/akre.jpg"
+  },
+
+  {
+    "id": 14,
+    "name_en": "Sersink Heritage Village",
+    "name_ku": "گوندی مێژوویی سەرسەنگ",
+    "name_ar": "قرية سرسنك التراثية",
+    "city": "Duhok",
+    "type": "Historic Village",
+    "year": "Ancient",
+    "rating": 4.2,
+    "image": "images/sersink.jpg"
+  },
+
+  {
+    "id": 15,
+    "name_en": "Halabja Memorial",
+    "name_ku": "یادگاری هەڵەبجە",
+    "name_ar": "نصب حلبجة التذكاري",
+    "city": "Halabja",
+    "type": "Memorial",
+    "year": "Modern",
+    "rating": 4.8,
+    "image": "images/halabja.jpg"
+  },
+
+  {
+    "id": 16,
+    "name_en": "Gali Ali Beg Historical Area",
+    "name_ku": "ناوچەی مێژوویی گەلی عەلی بەگ",
+    "name_ar": "منطقة كلي علي بك التاريخية",
+    "city": "Erbil",
+    "type": "Historic Landscape",
+    "year": "Ancient",
+    "rating": 4.6,
+    "image": "images/gali.jpg"
+  },
+
+  {
+    "id": 17,
+    "name_en": "Rawanduz Heritage Site",
+    "name_ku": "شوێنی مێژوویی ڕەواندز",
+    "name_ar": "موقع رواندوز التراثي",
+    "city": "Erbil",
+    "type": "Historic Site",
+    "year": "Ancient",
+    "rating": 4.5,
+    "image": "images/rawanduz.jpg"
+  },
+
+  {
+    "id": 18,
+    "name_en": "Zakho Old Bridge",
+    "name_ku": "پردی کۆنی زاخۆ",
+    "name_ar": "جسر زاخو القديم",
+    "city": "Duhok",
+    "type": "Bridge",
+    "year": "Abbasid Era",
+    "rating": 4.7,
+    "image": "images/zakho.jpg"
+  },
+
+  {
+    "id": 19,
+    "name_en": "Jarmo Archaeological Site",
+    "name_ku": "شوێنی ئارکێۆلۆجی جارمو",
+    "name_ar": "موقع جرمو الأثري",
+    "city": "Sulaymaniyah",
+    "type": "Archaeological Site",
+    "year": "7000 BC",
+    "rating": 4.9,
+    "image": "images/jarmo.jpg"
+  },
+
+  {
+    "id": 20,
+    "name_en": "Bestansur Archaeological Site",
+    "name_ku": "شوێنی ئارکێۆلۆجی بەستانسوور",
+    "name_ar": "موقع بستانسور الأثري",
+    "city": "Sulaymaniyah",
+    "type": "Neolithic Site",
+    "year": "8000 BC",
+    "rating": 4.8,
+    "image": "images/bestansur.jpg"
+  }
 ]
