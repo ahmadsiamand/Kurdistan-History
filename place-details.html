@@ -1,30 +1,413 @@
 <!DOCTYPE html>
-<html lang="ku" dir="rtl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وردەکاری شوێن</title>
-    <link rel="stylesheet" href="CSS/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Place Details | Historical Sites of Kurdistan</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="logo">مێژووی کوردستان</div>
-        <ul class="nav-links">
-            <li><a href="index.html">سەرەتا</a></li>
-            <li><a href="places.html">شوێنەوارەکان</a></li>
-            <li><button id="theme-toggle" class="btn-theme">گۆڕینی ڕەنگ</button></li>
-        </ul>
-    </nav>
 
-    <section class="details-section" id="details-container">
-        </section>
+<!-- ========================= -->
+<!-- NAVBAR -->
+<!-- ========================= -->
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; ٢٠٢٦ شوێنەوارە مێژووییەکانی کوردستان.</p>
-        </div>
-    </footer>
+<header class="header">
 
-    <script src="js/script.js"></script>
+<nav class="navbar">
+
+<div class="logo">
+<i class="fa-solid fa-landmark"></i>
+<span>Historical Sites of Kurdistan</span>
+</div>
+
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="places.html">Historical Places</a></li>
+<li><a href="place-details.html" class="active">Place Details</a></li>
+</ul>
+
+<div class="nav-actions">
+
+<button id="themeToggle" class="theme-btn">
+<i class="fa-solid fa-moon"></i>
+</button>
+
+</div>
+
+</nav>
+
+</header>
+
+<!-- ========================= -->
+<!-- HERO -->
+<!-- ========================= -->
+
+<section class="details-hero">
+
+<img
+id="mainImage"
+src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b"
+alt="Historical Site">
+
+<div class="hero-overlay"></div>
+
+<div class="details-hero-content">
+
+<h1 id="placeTitle">
+Erbil Citadel
+</h1>
+
+<p id="placeCity">
+Erbil, Kurdistan Region
+</p>
+
+<button
+id="favoritePlaceBtn"
+class="favorite-main-btn">
+
+<i class="fa-regular fa-heart"></i>
+Add to Favorites
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- IMAGE GALLERY -->
+<!-- ========================= -->
+
+<section class="gallery-section">
+
+<div class="container">
+
+<h2>Image Gallery</h2>
+
+<div class="gallery-grid">
+
+<img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b" alt="">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="">
+<img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963" alt="">
+<img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2" alt="">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- DESCRIPTION -->
+<!-- ========================= -->
+
+<section class="description-section">
+
+<div class="container">
+
+<div class="description-card">
+
+<h2>Historical Description</h2>
+
+<p id="placeDescription">
+
+The Erbil Citadel is a fortified settlement built on an ancient tell.
+It is considered one of the oldest continuously inhabited places in the world,
+with evidence of occupation dating back several millennia.
+
+The citadel has served as a cultural, political, and economic center
+throughout many civilizations including Assyrians, Medes, Persians,
+Ottomans, and modern Kurdish society.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- LOCATION INFO -->
+<!-- ========================= -->
+
+<section class="location-section">
+
+<div class="container">
+
+<div class="location-grid">
+
+<div class="location-info">
+
+<h2>Location Information</h2>
+
+<ul>
+
+<li>
+<strong>City:</strong>
+<span id="cityName">Erbil</span>
+</li>
+
+<li>
+<strong>Region:</strong>
+Kurdistan Region
+</li>
+
+<li>
+<strong>Country:</strong>
+Iraq
+</li>
+
+<li>
+<strong>Type:</strong>
+Citadel
+</li>
+
+<li>
+<strong>UNESCO Status:</strong>
+World Heritage Site
+</li>
+
+</ul>
+
+</div>
+
+<div class="location-map">
+
+<iframe
+src="https://maps.google.com/maps?q=Erbil%20Citadel&t=&z=13&ie=UTF8&iwloc=&output=embed"
+allowfullscreen=""
+loading="lazy">
+</iframe>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- RATING SECTION -->
+<!-- ========================= -->
+
+<section class="rating-section">
+
+<div class="container">
+
+<h2>Visitor Rating</h2>
+
+<div class="rating-box">
+
+<div class="stars">
+
+<i class="fa-solid fa-star rating-star" data-rate="1"></i>
+<i class="fa-solid fa-star rating-star" data-rate="2"></i>
+<i class="fa-solid fa-star rating-star" data-rate="3"></i>
+<i class="fa-solid fa-star rating-star" data-rate="4"></i>
+<i class="fa-solid fa-star rating-star" data-rate="5"></i>
+
+</div>
+
+<p id="ratingResult">
+Rate this historical site
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- RELATED PLACES -->
+<!-- ========================= -->
+
+<section class="related-section">
+
+<div class="container">
+
+<h2>Related Historical Places</h2>
+
+<div class="related-grid">
+
+<div class="related-card">
+
+<img
+src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963"
+alt="Amedi">
+
+<h3>Amedi</h3>
+
+<p>
+Ancient mountain city.
+</p>
+
+<a href="place-details.html">
+View Details
+</a>
+
+</div>
+
+<div class="related-card">
+
+<img
+src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2"
+alt="Lalish">
+
+<h3>Lalish Temple</h3>
+
+<p>
+Holy Yazidi site.
+</p>
+
+<a href="place-details.html">
+View Details
+</a>
+
+</div>
+
+<div class="related-card">
+
+<img
+src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+alt="Qizqapan">
+
+<h3>Qizqapan Cave</h3>
+
+<p>
+Ancient rock tomb.
+</p>
+
+<a href="place-details.html">
+View Details
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- QUICK FACTS -->
+<!-- ========================= -->
+
+<section class="facts-section">
+
+<div class="container">
+
+<h2>Quick Facts</h2>
+
+<div class="facts-grid">
+
+<div class="fact-card">
+<h3>6000+</h3>
+<p>Years Old</p>
+</div>
+
+<div class="fact-card">
+<h3>UNESCO</h3>
+<p>World Heritage</p>
+</div>
+
+<div class="fact-card">
+<h3>Millions</h3>
+<p>Visitors</p>
+</div>
+
+<div class="fact-card">
+<h3>Kurdistan</h3>
+<p>Cultural Icon</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer class="footer">
+
+<div class="footer-content">
+
+<div>
+
+<h3>Historical Sites of Kurdistan</h3>
+
+<p>
+Discover and preserve Kurdistan's rich history.
+</p>
+
+</div>
+
+<div>
+
+<h3>Quick Links</h3>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+<li><a href="places.html">Historical Places</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h3>Follow Us</h3>
+
+<div class="social-links">
+
+<a href="#">
+<i class="fab fa-facebook"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-youtube"></i>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+© 2026 Historical Sites of Kurdistan
+</p>
+
+</div>
+
+</footer>
+
+<script src="js/script.js"></script>
+
 </body>
 </html>
