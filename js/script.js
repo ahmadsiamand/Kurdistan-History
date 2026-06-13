@@ -1,123 +1,561 @@
+/* =====================================
+   Historical Sites of Kurdistan
+   script.js
+===================================== */
+
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. دۆخی تاريک و ڕووناکی (Dark/Light Mode)
-    const themeToggleBtn = document.getElementById("theme-toggle");
-    if (themeToggleBtn) {
-        // پشکنینی دۆخی پاشەکەوتکراو
-        if (localStorage.getItem("theme") === "light") {
-            document.body.classList.add("light-mode");
-        }
 
-        themeToggleBtn.addEventListener("click", () => {
-            document.body.classList.toggle("light-mode");
-            if (document.body.classList.contains("light-mode")) {
-                localStorage.setItem("theme", "light");
-            } else {
-                localStorage.setItem("theme", "dark");
-            }
-        });
-    }
+    initializeTheme();
+    initializeSearch();
+    initializeFilters();
+    initializeFavorites();
+    initializeQuiz();
+    initializeRating();
+    initializeLanguages();
+    initializeMobileMenu();
+    initializeNewsletter();
 
-    // 2. هێنانی داتا لە JSON
-    fetch('data/places.json')
-        .then(response => response.json())
-        .then(data => {
-            const currentPath = window.location.pathname;
-
-            // بۆ لاپەڕەی سەرەکی
-            if (currentPath.includes("index.html") || currentPath === "/") {
-                renderCards(data.slice(0, 3), "featured-grid");
-            }
-            // بۆ لاپەڕەی شوێنەوارەکان
-            else if (currentPath.includes("places.html")) {
-                renderCards(data, "places-grid");
-                setupFilters(data);
-            }
-            // بۆ لاپەڕەی وردەکاری
-            else if (currentPath.includes("place-details.html")) {
-                renderDetails(data);
-            }
-        })
-        .catch(error => console.error("Error loading data:", error));
 });
 
-// دروستکردنی کاردەکان
-function renderCards(places, containerId) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
+/* =====================================
+   DARK / LIGHT MODE
+===================================== */
 
-    container.innerHTML = "";
-    places.forEach(place => {
-        const card = document.createElement("div");
-        card.className = "card";
-        card.innerHTML = `
-            <img src="${place.image}" alt="${place.name}" onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'">
-            <div class="card-content">
-                <h3>${place.name}</h3>
-                <p><strong>شار:</strong> ${place.city}</p>
-                <p>${place.description.substring(0, 50)}...</p>
-                <a href="place-details.html?id=${place.id}" class="btn-outline">بینینی وردەکاری</a>
-            </div>
-        `;
-        container.appendChild(card);
+function initializeTheme() {
+
+    const themeBtn = document.getElementById("themeToggle");
+
+    if (!themeBtn) return;
+
+    const savedTheme =
+        localStorage.getItem("theme");
+
+    if (savedTheme === "light") {
+        document.body.classList.add("light-mode");
+    }
+
+    themeBtn.addEventListener("click", () => {
+
+        document.body.classList.toggle("light-mode");
+
+        const currentTheme =
+            document.body.classList.contains("light-mode")
+                ? "light"
+                : "dark";
+
+        localStorage.setItem(
+            "theme",
+            currentTheme
+        );
+
     });
+
 }
 
-// فلتەرکردن و گەڕان
-function setupFilters(data) {
-    const searchInput = document.getElementById("search-input");
-    const cityFilter = document.getElementById("city-filter");
+/* =====================================
+   SEARCH
+===================================== */
 
-    function filterData() {
-        const searchText = searchInput.value.toLowerCase();
-        const selectedCity = cityFilter.value;
+function initializeSearch() {
 
-        const filtered = data.filter(place => {
-            const matchesSearch = place.name.toLowerCase().includes(searchText) || place.city.toLowerCase().includes(searchText);
-            const matchesCity = selectedCity === "all" || place.city === selectedCity;
-            return matchesSearch && matchesCity;
+    const searchInput =
+        document.getElementById("searchInput");
+
+    if (!searchInput) return;
+
+    searchInput.addEventListener("input", () => {
+
+        const keyword =
+            searchInput.value.toLowerCase();
+
+        const cards =
+            document.querySelectorAll(".place-card");
+
+        cards.forEach(card => {
+
+            const placeName =
+                card.dataset.name.toLowerCase();
+
+            if (
+                placeName.includes(keyword)
+            ) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+
         });
 
-        renderCards(filtered, "places-grid");
-    }
+    });
 
-    if (searchInput) searchInput.addEventListener("input", filterData);
-    if (cityFilter) cityFilter.addEventListener("change", filterData);
 }
 
-// لاپەڕەی وردەکاری
-function renderDetails(data) {
-    const container = document.getElementById("details-container");
-    const params = new URLSearchParams(window.location.search);
-    const placeId = parseInt(params.get("id"));
+/* =====================================
+   FILTER BY CITY
+===================================== */
 
-    const place = data.find(p => p.id === placeId);
+function initializeFilters() {
 
-    if (place) {
-        container.innerHTML = `
-            <img src="${place.image}" alt="${place.name}" class="details-image" onerror="this.src='https://via.placeholder.com/800x400?text=No+Image'">
-            <h1 style="color: var(--accent-color); margin-bottom: 20px;">${place.name}</h1>
-            <p><strong>شار:</strong> ${place.city}</p>
-            <p><strong>هەڵسەنگاندن:</strong> ${place.rating} / 5</p>
-            <p style="margin-top: 20px; font-size: 1.1rem;">${place.description}</p>
-            
-            <h3 style="margin-top: 40px; color: var(--accent-color);">نەخشە (نموونە)</h3>
-            <div style="background: var(--card-bg); height: 300px; display:flex; align-items:center; justify-content:center; border: 1px solid var(--primary-color);">
-                نەخشەی ${place.name} لێرە دەبێت
-            </div>
-        `;
-    } else {
-        container.innerHTML = "<h2>شوێنەوارەکە نەدۆزرایەوە!</h2>";
-    }
+    const cityFilter =
+        document.getElementById("cityFilter");
+
+    if (!cityFilter) return;
+
+    cityFilter.addEventListener("change", () => {
+
+        const city =
+            cityFilter.value;
+
+        const cards =
+            document.querySelectorAll(".place-card");
+
+        cards.forEach(card => {
+
+            if (
+                city === "all" ||
+                card.dataset.city === city
+            ) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    });
+
 }
 
-// سیستەمی تاقیکردنەوە (Quiz)
-function checkAnswer(isCorrect) {
-    const resultMsg = document.getElementById("quiz-result");
-    if (isCorrect) {
-        resultMsg.textContent = "وەڵامەکەت ڕاستە! ئافەرین.";
-        resultMsg.style.color = "#4CAF50"; // سەوز
-    } else {
-        resultMsg.textContent = "وەڵامەکەت هەڵەیە. هەوڵێکی تر بدە.";
-        resultMsg.style.color = "#f44336"; // سوور
+/* =====================================
+   FAVORITES
+===================================== */
+
+function initializeFavorites() {
+
+    const buttons =
+        document.querySelectorAll(".favorite-btn");
+
+    const favoriteContainer =
+        document.getElementById(
+            "favoritesContainer"
+        );
+
+    let favorites =
+        JSON.parse(
+            localStorage.getItem("favorites")
+        ) || [];
+
+    buttons.forEach(button => {
+
+        const id =
+            button.dataset.id;
+
+        if (
+            favorites.includes(id)
+        ) {
+            button.innerHTML =
+                '<i class="fa-solid fa-heart"></i>';
+        }
+
+        button.addEventListener("click", () => {
+
+            if (
+                favorites.includes(id)
+            ) {
+
+                favorites =
+                    favorites.filter(
+                        item => item !== id
+                    );
+
+                button.innerHTML =
+                    '<i class="fa-regular fa-heart"></i>';
+
+            } else {
+
+                favorites.push(id);
+
+                button.innerHTML =
+                    '<i class="fa-solid fa-heart"></i>';
+
+            }
+
+            localStorage.setItem(
+                "favorites",
+                JSON.stringify(favorites)
+            );
+
+            renderFavorites();
+
+        });
+
+    });
+
+    function renderFavorites() {
+
+        if (!favoriteContainer) return;
+
+        favoriteContainer.innerHTML = "";
+
+        if (
+            favorites.length === 0
+        ) {
+
+            favoriteContainer.innerHTML =
+                "<p>No favorite places selected yet.</p>";
+
+            return;
+        }
+
+        favorites.forEach(id => {
+
+            const item =
+                document.createElement("div");
+
+            item.classList.add(
+                "favorite-item"
+            );
+
+            item.innerHTML =
+                `<p>Favorite Place ID: ${id}</p>`;
+
+            favoriteContainer.appendChild(
+                item
+            );
+
+        });
+
     }
+
+    renderFavorites();
+
 }
+
+/* =====================================
+   DETAILS PAGE FAVORITE BUTTON
+===================================== */
+
+const detailsFavoriteButton =
+    document.getElementById(
+        "favoritePlaceBtn"
+    );
+
+if (detailsFavoriteButton) {
+
+    detailsFavoriteButton.addEventListener(
+        "click",
+        () => {
+
+            const title =
+                document.getElementById(
+                    "placeTitle"
+                ).textContent;
+
+            let favorites =
+                JSON.parse(
+                    localStorage.getItem(
+                        "favoritePlaces"
+                    )
+                ) || [];
+
+            if (
+                !favorites.includes(title)
+            ) {
+
+                favorites.push(title);
+
+                localStorage.setItem(
+                    "favoritePlaces",
+                    JSON.stringify(favorites)
+                );
+
+                detailsFavoriteButton.innerHTML =
+                    `<i class="fa-solid fa-heart"></i> Added`;
+
+            }
+
+        }
+    );
+
+}
+
+/* =====================================
+   QUIZ
+===================================== */
+
+function initializeQuiz() {
+
+    const options =
+        document.querySelectorAll(
+            ".quiz-option"
+        );
+
+    const result =
+        document.getElementById(
+            "quizResult"
+        );
+
+    if (!options.length) return;
+
+    options.forEach(option => {
+
+        option.addEventListener(
+            "click",
+            () => {
+
+                if (
+                    option.classList.contains(
+                        "correct"
+                    )
+                ) {
+
+                    result.textContent =
+                        "✔️ Correct Answer!";
+
+                    result.style.color =
+                        "lightgreen";
+
+                } else {
+
+                    result.textContent =
+                        "❌ Wrong Answer.";
+
+                    result.style.color =
+                        "red";
+
+                }
+
+            }
+        );
+
+    });
+
+}
+
+/* =====================================
+   STAR RATING
+===================================== */
+
+function initializeRating() {
+
+    const stars =
+        document.querySelectorAll(
+            ".rating-star"
+        );
+
+    const result =
+        document.getElementById(
+            "ratingResult"
+        );
+
+    if (!stars.length) return;
+
+    stars.forEach(star => {
+
+        star.addEventListener(
+            "click",
+            () => {
+
+                const rating =
+                    star.dataset.rate;
+
+                stars.forEach(item =>
+                    item.classList.remove(
+                        "active"
+                    )
+                );
+
+                stars.forEach(item => {
+
+                    if (
+                        item.dataset.rate <=
+                        rating
+                    ) {
+
+                        item.classList.add(
+                            "active"
+                        );
+
+                    }
+
+                });
+
+                result.textContent =
+                    `You rated this place ${rating}/5`;
+
+                localStorage.setItem(
+                    "siteRating",
+                    rating
+                );
+
+            }
+        );
+
+    });
+
+}
+
+/* =====================================
+   LANGUAGE SWITCHER
+===================================== */
+
+function initializeLanguages() {
+
+    const switcher =
+        document.getElementById(
+            "languageSwitcher"
+        );
+
+    if (!switcher) return;
+
+    switcher.addEventListener(
+        "change",
+        () => {
+
+            const language =
+                switcher.value;
+
+            document
+                .querySelectorAll(
+                    "[data-en]"
+                )
+                .forEach(element => {
+
+                    const text =
+                        element.getAttribute(
+                            `data-${language}`
+                        );
+
+                    if (text) {
+                        element.textContent =
+                            text;
+                    }
+
+                });
+
+        }
+    );
+
+}
+
+/* =====================================
+   MOBILE MENU
+===================================== */
+
+function initializeMobileMenu() {
+
+    const menuButton =
+        document.querySelector(
+            ".menu-toggle"
+        );
+
+    const navLinks =
+        document.querySelector(
+            ".nav-links"
+        );
+
+    if (
+        !menuButton ||
+        !navLinks
+    ) return;
+
+    menuButton.addEventListener(
+        "click",
+        () => {
+
+            navLinks.classList.toggle(
+                "show"
+            );
+
+        }
+    );
+
+}
+
+/* =====================================
+   NEWSLETTER
+===================================== */
+
+function initializeNewsletter() {
+
+    const emailInput =
+        document.querySelector(
+            ".newsletter-form input"
+        );
+
+    const submitButton =
+        document.querySelector(
+            ".newsletter-form button"
+        );
+
+    if (
+        !emailInput ||
+        !submitButton
+    ) return;
+
+    submitButton.addEventListener(
+        "click",
+        () => {
+
+            const email =
+                emailInput.value.trim();
+
+            const regex =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (
+                regex.test(email)
+            ) {
+
+                alert(
+                    "Subscription successful!"
+                );
+
+                emailInput.value = "";
+
+            } else {
+
+                alert(
+                    "Please enter a valid email."
+                );
+
+            }
+
+        }
+    );
+
+}
+
+/* =====================================
+   SMOOTH SCROLL
+===================================== */
+
+document
+.querySelectorAll('a[href^="#"]')
+.forEach(anchor => {
+
+    anchor.addEventListener(
+        "click",
+        function(e){
+
+            e.preventDefault();
+
+            const target =
+                document.querySelector(
+                    this.getAttribute(
+                        "href"
+                    )
+                );
+
+            if(target){
+
+                target.scrollIntoView({
+                    behavior:"smooth"
+                });
+
+            }
+
+        }
+    );
+
+});
