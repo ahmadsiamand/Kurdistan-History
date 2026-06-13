@@ -1,72 +1,450 @@
 <!DOCTYPE html>
-<html lang="ku" dir="rtl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شوێنەوارە مێژووییەکانی کوردستان</title>
-    <link rel="stylesheet" href="CSS/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Historical Sites of Kurdistan</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="logo">مێژووی کوردستان</div>
-        <ul class="nav-links">
-            <li><a href="index.html">سەرەتا</a></li>
-            <li><a href="places.html">شوێنەوارەکان</a></li>
-            <li><button id="theme-toggle" class="btn-theme">گۆڕینی ڕەنگ</button></li>
-        </ul>
-    </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>گەشتێک بەناو مێژووی دێرینی کوردستاندا</h1>
-            <p>گەڕان بکە بەناو قەڵا، ئەشکەوت و شوێنەوارە هەزار ساڵەییەکان.</p>
-            <div class="search-bar">
-                <input type="text" id="home-search" placeholder="گەڕان بۆ شوێنەوار...">
-                <button onclick="window.location.href='places.html'" class="btn-primary">گەڕان</button>
-            </div>
-        </div>
-    </header>
+<!-- ========================= -->
+<!-- NAVBAR -->
+<!-- ========================= -->
 
-    <section class="featured-places">
-        <h2>شوێنەوارە دیارەکان</h2>
-        <div class="grid-container" id="featured-grid">
-            </div>
-    </section>
+<header class="header">
 
-    <section class="statistics">
-        <div class="stat-box">
-            <h3>+١٠,٠٠٠</h3>
-            <p>ساڵ لە مێژوو</p>
-        </div>
-        <div class="stat-box">
-            <h3>+٥٠</h3>
-            <p>شوێنەواری تۆمارکراو</p>
-        </div>
-        <div class="stat-box">
-            <h3>٤</h3>
-            <p>پارێزگای سەرەکی</p>
-        </div>
-    </section>
+<nav class="navbar">
 
-    <section class="quiz-section">
-        <h2>تاقیکردنەوەی مێژوویی</h2>
-        <div class="quiz-container" id="quiz-container">
-            <p id="question">پایتەختی میرنشینی بابان کوێ بووە؟</p>
-            <div class="options">
-                <button class="btn-outline" onclick="checkAnswer(false)">هەولێر</button>
-                <button class="btn-outline" onclick="checkAnswer(true)">سلێمانی</button>
-                <button class="btn-outline" onclick="checkAnswer(false)">دهۆک</button>
-            </div>
-            <p id="quiz-result"></p>
-        </div>
-    </section>
+<div class="logo">
+<i class="fa-solid fa-landmark"></i>
+<span>Historical Sites of Kurdistan</span>
+</div>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; ٢٠٢٦ شوێنەوارە مێژووییەکانی کوردستان. گشت مافەکانی پارێزراوە.</p>
-        </div>
-    </footer>
+<ul class="nav-links">
 
-    <script src="js/script.js"></script>
+<li>
+<a href="index.html" data-en="Home"
+data-ku="ماڵەوە"
+data-ar="الرئيسية">
+Home
+</a>
+</li>
+
+<li>
+<a href="places.html"
+data-en="Historical Places"
+data-ku="شوێنە مێژووییەکان"
+data-ar="المواقع التاريخية">
+Historical Places
+</a>
+</li>
+
+<li>
+<a href="#quiz"
+data-en="Quiz"
+data-ku="تاقیکردنەوە"
+data-ar="الاختبار">
+Quiz
+</a>
+</li>
+
+<li>
+<a href="#footer"
+data-en="Contact"
+data-ku="پەیوەندی"
+data-ar="اتصل بنا">
+Contact
+</a>
+</li>
+
+</ul>
+
+<div class="nav-actions">
+
+<button id="themeToggle" class="theme-btn">
+<i class="fa-solid fa-moon"></i>
+</button>
+
+<select id="languageSwitcher">
+
+<option value="en">English</option>
+<option value="ku">کوردی</option>
+<option value="ar">العربية</option>
+
+</select>
+
+<div class="menu-toggle">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+</div>
+
+</nav>
+
+</header>
+
+<!-- ========================= -->
+<!-- HERO SECTION -->
+<!-- ========================= -->
+
+<section class="hero">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<h1
+data-en="Explore the Historical Treasures of Kurdistan"
+data-ku="گەڕان بە گەنجینە مێژووییەکانی کوردستان"
+data-ar="استكشف الكنوز التاريخية في كردستان">
+
+Explore the Historical Treasures of Kurdistan
+
+</h1>
+
+<p
+data-en="Discover castles, citadels, ancient towns, and legendary landmarks."
+data-ku="قەڵا و شارە کۆنەکان و شوێنە ئەفسانەییەکان بدۆزەرەوە."
+data-ar="اكتشف القلاع والمدن القديمة والمعالم الأسطورية.">
+
+Discover castles, citadels, ancient towns, and legendary landmarks.
+
+</p>
+
+<div class="hero-search">
+
+<input
+type="text"
+id="homeSearch"
+placeholder="Search historical sites...">
+
+<button>
+<i class="fa-solid fa-magnifying-glass"></i>
+Search
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FEATURED PLACES -->
+<!-- ========================= -->
+
+<section class="featured">
+
+<div class="section-title">
+
+<h2
+data-en="Featured Historical Sites"
+data-ku="شوێنە مێژووییە دیارەکان"
+data-ar="أبرز المواقع التاريخية">
+
+Featured Historical Sites
+
+</h2>
+
+<p>
+Discover some of the most famous places in Kurdistan.
+</p>
+
+</div>
+
+<div class="featured-grid">
+
+<div class="place-card">
+
+<img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b"
+alt="Erbil Citadel">
+
+<div class="place-content">
+
+<h3>Erbil Citadel</h3>
+
+<p>
+One of the oldest continuously inhabited settlements in the world.
+</p>
+
+<button class="details-btn">
+View Details
+</button>
+
+</div>
+
+</div>
+
+<div class="place-card">
+
+<img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963"
+alt="Amedi">
+
+<div class="place-content">
+
+<h3>Amedi</h3>
+
+<p>
+Ancient mountain town surrounded by breathtaking landscapes.
+</p>
+
+<button class="details-btn">
+View Details
+</button>
+
+</div>
+
+</div>
+
+<div class="place-card">
+
+<img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2"
+alt="Lalish">
+
+<div class="place-content">
+
+<h3>Lalish Temple</h3>
+
+<p>
+The holiest site of the Yazidi faith.
+</p>
+
+<button class="details-btn">
+View Details
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- INTERACTIVE MAP -->
+<!-- ========================= -->
+
+<section class="map-section">
+
+<div class="section-title">
+
+<h2
+data-en="Interactive Kurdistan Map"
+data-ku="نەخشەی کارلێککارانەی کوردستان"
+data-ar="الخريطة التفاعلية لكردستان">
+
+Interactive Kurdistan Map
+
+</h2>
+
+</div>
+
+<div class="map-container">
+
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/3/35/Kurdistan_Map.png"
+alt="Kurdistan Map">
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- STATISTICS -->
+<!-- ========================= -->
+
+<section class="stats">
+
+<div class="stat-box">
+
+<h3>20+</h3>
+
+<p>Historical Sites</p>
+
+</div>
+
+<div class="stat-box">
+
+<h3>4</h3>
+
+<p>Major Cities</p>
+
+</div>
+
+<div class="stat-box">
+
+<h3>5000+</h3>
+
+<p>Years of History</p>
+
+</div>
+
+<div class="stat-box">
+
+<h3>100K+</h3>
+
+<p>Visitors</p>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- QUIZ SECTION -->
+<!-- ========================= -->
+
+<section id="quiz" class="quiz-section">
+
+<div class="section-title">
+
+<h2
+data-en="Kurdistan History Quiz"
+data-ku="تاقیکردنەوەی مێژووی کوردستان"
+data-ar="اختبار تاريخ كردستان">
+
+Kurdistan History Quiz
+
+</h2>
+
+</div>
+
+<div class="quiz-box">
+
+<h3>
+Which city contains the famous Citadel?
+</h3>
+
+<button class="quiz-option">
+Duhok
+</button>
+
+<button class="quiz-option correct">
+Erbil
+</button>
+
+<button class="quiz-option">
+Sulaymaniyah
+</button>
+
+<button class="quiz-option">
+Halabja
+</button>
+
+<p id="quizResult"></p>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- NEWSLETTER -->
+<!-- ========================= -->
+
+<section class="newsletter">
+
+<h2>Stay Updated</h2>
+
+<p>
+Get updates about historical discoveries and events.
+</p>
+
+<div class="newsletter-form">
+
+<input
+type="email"
+placeholder="Enter your email">
+
+<button>
+Subscribe
+</button>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer id="footer">
+
+<div class="footer-content">
+
+<div class="footer-column">
+
+<h3>Historical Sites of Kurdistan</h3>
+
+<p>
+Discover the rich heritage and culture of Kurdistan.
+</p>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Quick Links</h3>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="places.html">Places</a></li>
+
+<li><a href="#quiz">Quiz</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Follow Us</h3>
+
+<div class="social-links">
+
+<a href="#">
+<i class="fab fa-facebook"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-youtube"></i>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+© 2026 Historical Sites of Kurdistan
+</p>
+
+</div>
+
+</footer>
+
+<script src="js/script.js"></script>
+
 </body>
 </html>
