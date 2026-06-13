@@ -1,0 +1,549 @@
+/* =====================================
+   Historical Sites of Kurdistan
+   Premium Dark Theme
+===================================== */
+
+:root{
+  --black:#0F0F0F;
+  --dark-gray:#1E1E1E;
+  --brown:#6F4E37;
+  --gold:#C8A165;
+  --white:#F5F5F5;
+
+  --bg:var(--black);
+  --card:var(--dark-gray);
+  --text:var(--white);
+  --accent:var(--gold);
+
+  --radius:16px;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+
+  --transition:.3s ease;
+}
+
+body.light-mode{
+  --bg:#f5f5f5;
+  --card:#ffffff;
+  --text:#111111;
+  --shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  transition:var(--transition);
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+ul{
+  list-style:none;
+}
+
+.container{
+  width:min(1200px,90%);
+  margin:auto;
+}
+
+/* =====================================
+   NAVBAR
+===================================== */
+
+.header{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:rgba(15,15,15,.95);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.navbar{
+  width:min(1300px,95%);
+  margin:auto;
+  min-height:80px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--gold);
+  font-weight:700;
+}
+
+.logo i{
+  font-size:1.6rem;
+}
+
+.nav-links{
+  display:flex;
+  gap:30px;
+}
+
+.nav-links a{
+  position:relative;
+  transition:var(--transition);
+}
+
+.nav-links a:hover{
+  color:var(--gold);
+}
+
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  bottom:-5px;
+  left:0;
+  width:0;
+  height:2px;
+  background:var(--gold);
+  transition:var(--transition);
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+.nav-actions{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.theme-btn{
+  width:45px;
+  height:45px;
+  border:none;
+  border-radius:50%;
+  cursor:pointer;
+  background:var(--gold);
+  color:#000;
+}
+
+.menu-toggle{
+  display:none;
+  cursor:pointer;
+  font-size:1.5rem;
+}
+
+/* =====================================
+   HERO
+===================================== */
+
+.hero{
+  min-height:100vh;
+  background:
+  linear-gradient(rgba(0,0,0,.6),
+  rgba(0,0,0,.6)),
+  url("https://images.unsplash.com/photo-1467269204594-9661b134dd2b")
+  center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.hero-content{
+  width:min(900px,90%);
+}
+
+.hero h1{
+  font-size:4rem;
+  margin-bottom:20px;
+  color:var(--white);
+}
+
+.hero p{
+  font-size:1.2rem;
+  color:#ddd;
+  margin-bottom:30px;
+}
+
+.hero-search{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.hero-search input{
+  width:500px;
+  max-width:100%;
+  padding:15px 20px;
+  border:none;
+  border-radius:50px;
+}
+
+.hero-search button{
+  padding:15px 25px;
+  border:none;
+  border-radius:50px;
+  background:var(--gold);
+  cursor:pointer;
+  font-weight:600;
+}
+
+/* =====================================
+   SECTIONS
+===================================== */
+
+section{
+  padding:80px 0;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.section-title h2{
+  font-size:2.5rem;
+  color:var(--gold);
+}
+
+.section-title p{
+  margin-top:15px;
+  opacity:.8;
+}
+
+/* =====================================
+   CARDS
+===================================== */
+
+.featured-grid,
+.places-grid,
+.related-grid{
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(300px,1fr));
+  gap:25px;
+}
+
+.place-card,
+.related-card{
+  background:var(--card);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:var(--transition);
+}
+
+.place-card:hover,
+.related-card:hover{
+  transform:translateY(-10px);
+}
+
+.place-card img,
+.related-card img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+}
+
+.place-content{
+  padding:20px;
+}
+
+.place-content h3{
+  margin-bottom:10px;
+}
+
+.place-content p{
+  opacity:.85;
+  line-height:1.7;
+}
+
+.city-badge{
+  display:inline-block;
+  margin-bottom:12px;
+  padding:6px 12px;
+  border-radius:30px;
+  background:rgba(200,161,101,.15);
+  color:var(--gold);
+}
+
+.card-actions{
+  margin-top:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.details-btn{
+  padding:10px 18px;
+  background:var(--gold);
+  color:#000;
+  border-radius:8px;
+  font-weight:600;
+}
+
+.favorite-btn{
+  width:45px;
+  height:45px;
+  border:none;
+  border-radius:50%;
+  background:var(--brown);
+  color:white;
+  cursor:pointer;
+}
+
+/* =====================================
+   MAP
+===================================== */
+
+.map-container{
+  width:min(1000px,90%);
+  margin:auto;
+}
+
+.map-container img{
+  border-radius:20px;
+  box-shadow:var(--shadow);
+}
+
+/* =====================================
+   STATS
+===================================== */
+
+.stats{
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+.stat-box{
+  background:var(--card);
+  text-align:center;
+  padding:35px;
+  border-radius:var(--radius);
+}
+
+.stat-box h3{
+  color:var(--gold);
+  font-size:2rem;
+}
+
+/* =====================================
+   GALLERY
+===================================== */
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.gallery-grid img{
+  height:250px;
+  object-fit:cover;
+  border-radius:15px;
+  transition:var(--transition);
+}
+
+.gallery-grid img:hover{
+  transform:scale(1.05);
+}
+
+/* =====================================
+   LOCATION
+===================================== */
+
+.location-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+.location-info,
+.description-card{
+  background:var(--card);
+  padding:30px;
+  border-radius:var(--radius);
+}
+
+.location-info ul li{
+  margin:15px 0;
+}
+
+.location-map iframe{
+  width:100%;
+  height:400px;
+  border:none;
+  border-radius:var(--radius);
+}
+
+/* =====================================
+   QUIZ
+===================================== */
+
+.quiz-box{
+  width:min(700px,90%);
+  margin:auto;
+  background:var(--card);
+  padding:40px;
+  border-radius:var(--radius);
+  text-align:center;
+}
+
+.quiz-option{
+  display:block;
+  width:100%;
+  margin:10px 0;
+  padding:15px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.quiz-option:hover{
+  background:var(--gold);
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.footer{
+  background:#090909;
+  padding-top:70px;
+}
+
+.footer-content{
+  width:min(1200px,90%);
+  margin:auto;
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.footer h3{
+  color:var(--gold);
+  margin-bottom:20px;
+}
+
+.footer-bottom{
+  text-align:center;
+  padding:25px;
+  margin-top:40px;
+  border-top:1px solid rgba(255,255,255,.05);
+}
+
+.social-links{
+  display:flex;
+  gap:15px;
+}
+
+.social-links a{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  background:var(--gold);
+  color:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.place-card,
+.related-card,
+.stat-box{
+  animation:fadeUp .8s ease;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width:992px){
+
+.hero h1{
+  font-size:3rem;
+}
+
+.location-grid{
+  grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:768px){
+
+.nav-links{
+  display:none;
+}
+
+.menu-toggle{
+  display:block;
+}
+
+.hero h1{
+  font-size:2.3rem;
+}
+
+.section-title h2{
+  font-size:2rem;
+}
+
+}
+
+@media(max-width:576px){
+
+.hero{
+  min-height:80vh;
+}
+
+.hero h1{
+  font-size:1.8rem;
+}
+
+.hero-search{
+  flex-direction:column;
+}
+
+.hero-search button{
+  width:100%;
+}
+
+}
