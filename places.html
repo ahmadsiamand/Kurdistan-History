@@ -1,46 +1,514 @@
 <!DOCTYPE html>
-<html lang="ku" dir="rtl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لیستی شوێنەوارەکان</title>
-    <link rel="stylesheet" href="CSS/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Historical Places | Kurdistan</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="logo">مێژووی کوردستان</div>
-        <ul class="nav-links">
-            <li><a href="index.html">سەرەتا</a></li>
-            <li><a href="places.html">شوێنەوارەکان</a></li>
-            <li><button id="theme-toggle" class="btn-theme">گۆڕینی ڕەنگ</button></li>
-        </ul>
-    </nav>
 
-    <section class="places-header">
-        <h1>گشت شوێنەوارەکان</h1>
-        <div class="filters">
-            <input type="text" id="search-input" placeholder="گەڕان بەدوای ناو یان شار...">
-            <select id="city-filter">
-                <option value="all">هەموو شارەکان</option>
-                <option value="هەولێر">هەولێر</option>
-                <option value="سلێمانی">سلێمانی</option>
-                <option value="دهۆک">دهۆک</option>
-                <option value="هەڵەبجە">هەڵەبجە</option>
-            </select>
-        </div>
-    </section>
+<!-- ===================== -->
+<!-- NAVBAR -->
+<!-- ===================== -->
 
-    <section class="places-list">
-        <div class="grid-container" id="places-grid">
-            </div>
-    </section>
+<header class="header">
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; ٢٠٢٦ شوێنەوارە مێژووییەکانی کوردستان.</p>
-        </div>
-    </footer>
+<nav class="navbar">
 
-    <script src="js/script.js"></script>
+<div class="logo">
+<i class="fa-solid fa-landmark"></i>
+<span>Historical Sites of Kurdistan</span>
+</div>
+
+<ul class="nav-links">
+
+<li>
+<a href="index.html">Home</a>
+</li>
+
+<li>
+<a href="places.html" class="active">
+Historical Places
+</a>
+</li>
+
+<li>
+<a href="place-details.html">
+Place Details
+</a>
+</li>
+
+</ul>
+
+<div class="nav-actions">
+
+<button id="themeToggle" class="theme-btn">
+<i class="fa-solid fa-moon"></i>
+</button>
+
+</div>
+
+</nav>
+
+</header>
+
+<!-- ===================== -->
+<!-- PAGE HEADER -->
+<!-- ===================== -->
+
+<section class="page-banner">
+
+<div class="overlay"></div>
+
+<div class="banner-content">
+
+<h1>
+Historical Places of Kurdistan
+</h1>
+
+<p>
+Explore castles, citadels, temples and ancient landmarks.
+</p>
+
+</div>
+
+</section>
+
+<!-- ===================== -->
+<!-- FILTERS -->
+<!-- ===================== -->
+
+<section class="filters-section">
+
+<div class="container">
+
+<div class="filters">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search historical sites...">
+
+<select id="cityFilter">
+
+<option value="all">
+All Cities
+</option>
+
+<option value="Erbil">
+Erbil
+</option>
+
+<option value="Duhok">
+Duhok
+</option>
+
+<option value="Sulaymaniyah">
+Sulaymaniyah
+</option>
+
+<option value="Halabja">
+Halabja
+</option>
+
+<option value="Kirkuk">
+Kirkuk
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================== -->
+<!-- PLACES GRID -->
+<!-- ===================== -->
+
+<section class="places-section">
+
+<div class="container">
+
+<div id="placesGrid" class="places-grid">
+
+<!-- CARD 1 -->
+
+<div class="place-card"
+data-city="Erbil"
+data-name="Erbil Citadel">
+
+<img
+src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b"
+alt="Erbil Citadel">
+
+<div class="place-content">
+
+<h3>Erbil Citadel</h3>
+
+<span class="city-badge">
+Erbil
+</span>
+
+<p>
+One of the world's oldest continuously inhabited settlements.
+</p>
+
+<div class="card-actions">
+
+<a href="place-details.html"
+class="details-btn">
+View Details
+</a>
+
+<button
+class="favorite-btn"
+data-id="1">
+
+<i class="fa-regular fa-heart"></i>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CARD 2 -->
+
+<div class="place-card"
+data-city="Duhok"
+data-name="Amedi">
+
+<img
+src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963"
+alt="Amedi">
+
+<div class="place-content">
+
+<h3>Amedi</h3>
+
+<span class="city-badge">
+Duhok
+</span>
+
+<p>
+Ancient mountain town with thousands of years of history.
+</p>
+
+<div class="card-actions">
+
+<a href="place-details.html"
+class="details-btn">
+View Details
+</a>
+
+<button
+class="favorite-btn"
+data-id="2">
+
+<i class="fa-regular fa-heart"></i>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CARD 3 -->
+
+<div class="place-card"
+data-city="Duhok"
+data-name="Lalish Temple">
+
+<img
+src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2"
+alt="Lalish">
+
+<div class="place-content">
+
+<h3>Lalish Temple</h3>
+
+<span class="city-badge">
+Duhok
+</span>
+
+<p>
+The most sacred place for the Yazidi community.
+</p>
+
+<div class="card-actions">
+
+<a href="place-details.html"
+class="details-btn">
+View Details
+</a>
+
+<button
+class="favorite-btn"
+data-id="3">
+
+<i class="fa-regular fa-heart"></i>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CARD 4 -->
+
+<div class="place-card"
+data-city="Sulaymaniyah"
+data-name="Qizqapan Cave">
+
+<img
+src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+alt="Qizqapan Cave">
+
+<div class="place-content">
+
+<h3>Qizqapan Cave</h3>
+
+<span class="city-badge">
+Sulaymaniyah
+</span>
+
+<p>
+Ancient rock-cut tomb dating back to the Median period.
+</p>
+
+<div class="card-actions">
+
+<a href="place-details.html"
+class="details-btn">
+View Details
+</a>
+
+<button
+class="favorite-btn"
+data-id="4">
+
+<i class="fa-regular fa-heart"></i>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CARD 5 -->
+
+<div class="place-card"
+data-city="Kirkuk"
+data-name="Kirkuk Citadel">
+
+<img
+src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2"
+alt="Kirkuk Citadel">
+
+<div class="place-content">
+
+<h3>Kirkuk Citadel</h3>
+
+<span class="city-badge">
+Kirkuk
+</span>
+
+<p>
+A historical fortress overlooking the ancient city.
+</p>
+
+<div class="card-actions">
+
+<a href="place-details.html"
+class="details-btn">
+View Details
+</a>
+
+<button
+class="favorite-btn"
+data-id="5">
+
+<i class="fa-regular fa-heart"></i>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CARD 6 -->
+
+<div class="place-card"
+data-city="Halabja"
+data-name="Ahmed Awa Cave">
+
+<img
+src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
+alt="Ahmed Awa">
+
+<div class="place-content">
+
+<h3>Ahmed Awa Cave</h3>
+
+<span class="city-badge">
+Halabja
+</span>
+
+<p>
+A famous natural and historical cave in Kurdistan.
+</p>
+
+<div class="card-actions">
+
+<a href="place-details.html"
+class="details-btn">
+View Details
+</a>
+
+<button
+class="favorite-btn"
+data-id="6">
+
+<i class="fa-regular fa-heart"></i>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================== -->
+<!-- FAVORITES SECTION -->
+<!-- ===================== -->
+
+<section class="favorites-section">
+
+<div class="container">
+
+<h2>
+My Favorite Places
+</h2>
+
+<div id="favoritesContainer">
+
+<p>
+No favorite places selected yet.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================== -->
+<!-- FOOTER -->
+<!-- ===================== -->
+
+<footer class="footer">
+
+<div class="footer-content">
+
+<div>
+
+<h3>Historical Sites of Kurdistan</h3>
+
+<p>
+Preserving and showcasing the rich heritage of Kurdistan.
+</p>
+
+</div>
+
+<div>
+
+<h3>Quick Links</h3>
+
+<ul>
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="places.html">
+Places
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h3>Social Media</h3>
+
+<div class="social-links">
+
+<a href="#">
+<i class="fab fa-facebook"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-youtube"></i>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+© 2026 Historical Sites of Kurdistan
+</p>
+
+</div>
+
+</footer>
+
+<script src="js/script.js"></script>
+
 </body>
 </html>
